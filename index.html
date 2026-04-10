@@ -9,19 +9,17 @@
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0a0a0a;
-    color: white;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #222;
 }
 
 /* NAV */
 header {
-    position: fixed;
-    width: 100%;
-    background: rgba(0,0,0,0.9);
+    background: #000;
+    color: white;
     padding: 15px 40px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -31,90 +29,80 @@ header {
 
 /* HERO */
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-    url('images/steel1.jpg');
-    background-size: cover;
-    background-position: center;
+    height: 80vh;
+    background: url('images/steel1.jpg') center/cover no-repeat;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-
-    animation: fadeIn 2s ease;
-}
-
-.hero h1 {
-    font-size: 48px;
-    max-width: 800px;
-}
-
-.btn {
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: #1e90ff;
-    text-decoration: none;
+    padding: 40px;
     color: white;
 }
 
-/* SECTIONS */
+.hero-text {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+}
+
+/* SECTION */
 .section {
-    padding: 100px 40px;
+    padding: 60px 40px;
 }
 
-.dark {
-    background: #111;
+/* SERVICES */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
 }
 
-.grid {
+.service-box {
+    padding: 20px;
+}
+
+.service-box img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+/* IMAGE STRIP */
+.image-strip {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
 }
 
-/* CARDS */
-.card {
-    background: #181818;
-    padding: 25px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    border: 1px solid #1e90ff;
-}
-
-/* IMAGE BLOCKS */
-.image-section {
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-}
-
-/* GALLERY */
-.gallery img {
+.image-strip img {
     width: 100%;
-    height: 220px;
+    height: 250px;
     object-fit: cover;
-    border-radius: 10px;
+}
+
+/* ABOUT */
+.about {
+    max-width: 800px;
 }
 
 /* FOOTER */
 footer {
+    background: #000;
+    color: white;
     text-align: center;
-    padding: 30px;
-    background: black;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    padding: 20px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -125,54 +113,64 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-    <h1>ForgeLine Steel Group</h1>
-    <p>Complete Steel Solutions — Fabrication • Installation • Labour Hire</p>
-    <a href="YOUR_FORM_LINK" class="btn">Request a Quote</a>
+    <div class="hero-text">
+        <h1>Complete Steel Fabrication & Installation</h1>
+        <p>One contractor for drafting, fabrication, installation and labour hire.</p>
+        <a href="YOUR_FORM_LINK" class="btn">Request a Quote</a>
+    </div>
 </section>
 
 <!-- SERVICES -->
-<section class="section dark">
+<section class="section">
     <h2>Our Services</h2>
-    <div class="grid">
-        <div class="card">Steel Fabrication</div>
-        <div class="card">Installation & Rigging</div>
-        <div class="card">Welding</div>
-        <div class="card">Labour Hire</div>
+
+    <div class="services">
+        <div class="service-box">
+            <img src="https://img.icons8.com/ios-filled/50/000000/engineering.png"/>
+            <p>Steel Drafting</p>
+        </div>
+
+        <div class="service-box">
+            <img src="https://img.icons8.com/ios-filled/50/000000/welding.png"/>
+            <p>Fabrication</p>
+        </div>
+
+        <div class="service-box">
+            <img src="https://img.icons8.com/ios-filled/50/000000/crane.png"/>
+            <p>Installation & Rigging</p>
+        </div>
+
+        <div class="service-box">
+            <img src="https://img.icons8.com/ios-filled/50/000000/workers.png"/>
+            <p>Labour Hire</p>
+        </div>
     </div>
 </section>
 
-<!-- IMAGE BREAK -->
-<div class="image-section" style="background-image:url('images/rigging1.jpg')"></div>
+<!-- IMAGE STRIP -->
+<div class="image-strip">
+    <img src="images/steel1.jpg">
+    <img src="images/steel2.jpg">
+    <img src="images/steel3.jpg">
+    <img src="images/welding1.jpg">
+</div>
 
 <!-- ABOUT -->
 <section class="section">
-    <h2>One Contractor. Complete Solution.</h2>
-    <p style="max-width:700px;margin:auto;text-align:center;">
-        We eliminate the need for multiple contractors by providing drafting,
-        fabrication, installation, and labour hire under one roof.
+    <h2>About ForgeLine Steel Group</h2>
+
+    <p class="about">
+        ForgeLine Steel Group provides complete steel solutions from design through to installation.
+        Our experienced team of boilermakers, welders, and riggers are fully qualified and insured,
+        delivering projects of all sizes across Australia.
     </p>
-</section>
-
-<!-- IMAGE BREAK -->
-<div class="image-section" style="background-image:url('images/welding1.jpg')"></div>
-
-<!-- PROJECTS -->
-<section class="section dark">
-    <h2>Projects</h2>
-    <div class="grid gallery">
-        <img src="images/steel1.jpg">
-        <img src="images/steel2.jpg">
-        <img src="images/steel3.jpg">
-        <img src="images/welding2.jpg">
-    </div>
 </section>
 
 <!-- CONTACT -->
 <section class="section">
     <h2>Request a Quote</h2>
-    <div style="text-align:center;">
-        <a href="YOUR_FORM_LINK" class="btn">Get a Quote</a>
-    </div>
+
+    <a href="YOUR_FORM_LINK" class="btn">Get a Quote</a>
 </section>
 
 <footer>
