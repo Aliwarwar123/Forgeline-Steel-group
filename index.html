@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forge Line Steel Group</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0a0a0a;
+    color: white;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+nav a {
+    color: #ccc;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #1e90ff;
+    color: white;
+    text-decoration: none;
+}
+
+.section {
+    padding: 60px 30px;
+}
+
+.dark {
+    background: #111;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #181818;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h2>Forge Line Steel Group</h2>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#labour">Labour Hire</a>
+        <a href="#contact">Quote</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>We Handle Your Entire Steel Project — Start to Finish</h1>
+    <p>Fabrication • Installation • Labour Hire</p>
+    <a href="#contact" class="btn">Request a Quote</a>
+</section>
+
+<section id="services" class="section">
+    <h2>Services</h2>
+    <div class="grid">
+        <div class="card">Drafting</div>
+        <div class="card">Fabrication</div>
+        <div class="card">Installation</div>
+        <div class="card">Welding</div>
+    </div>
+</section>
+
+<section id="labour" class="section dark">
+    <h2>Labour Hire</h2>
+    <div class="grid">
+        <div class="card">Boilermakers</div>
+        <div class="card">Welders</div>
+        <div class="card">Riggers</div>
+        <div class="card">On-Site Crews</div>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <h2>Request a Quote</h2>
+
+    <a href="YOUR_FORM_LINK" target="_blank" class="btn">
+        Get a Quote
+    </a>
+
+</section>
+
+<footer>
+    <p>© 2026 Forge Line Steel Group</p>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+            .scrollIntoView({ behavior: 'smooth' });
+    });
+});
+</script>
+
+</body>
+</html>
