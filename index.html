@@ -6,103 +6,183 @@
 <title>Forge Line Steel Group</title>
 
 <style>
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     background: #0a0a0a;
     color: white;
 }
 
+/* NAV */
 header {
-    position: sticky;
-    top: 0;
-    background: black;
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
-    padding: 15px 30px;
+    z-index: 1000;
 }
 
 nav a {
     color: #ccc;
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
+    font-weight: 500;
 }
 
+nav a:hover {
+    color: #1e90ff;
+}
+
+/* HERO */
 .hero {
-    height: 90vh;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1581091215367-59ab6b0e1b1c');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    animation: fadeIn 2s ease;
+}
+
+.hero h1 {
+    font-size: 50px;
+    max-width: 800px;
+}
+
+.hero p {
+    color: #ccc;
+    font-size: 18px;
 }
 
 .btn {
-    margin-top: 20px;
-    padding: 12px 25px;
+    margin-top: 25px;
+    padding: 14px 35px;
     background: #1e90ff;
-    color: white;
+    border-radius: 5px;
     text-decoration: none;
+    color: white;
+    transition: 0.3s;
 }
 
+.btn:hover {
+    background: #0d6efd;
+}
+
+/* SECTIONS */
 .section {
-    padding: 60px 30px;
+    padding: 100px 40px;
 }
 
 .dark {
     background: #111;
 }
 
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
+/* CARDS */
 .card {
     background: #181818;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 30px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
+.card:hover {
+    transform: translateY(-10px);
+    border: 1px solid #1e90ff;
+}
+
+/* PROJECT IMAGES */
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* CONTACT */
+.contact a {
+    display: inline-block;
+    text-align: center;
+}
+
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     background: black;
 }
-</style>
 
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <h2>Forge Line Steel Group</h2>
+    <h3>Forge Line Steel Group</h3>
     <nav>
         <a href="#services">Services</a>
-        <a href="#labour">Labour Hire</a>
+        <a href="#labour">Labour</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Quote</a>
     </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
     <h1>We Handle Your Entire Steel Project — Start to Finish</h1>
     <p>Fabrication • Installation • Labour Hire</p>
     <a href="#contact" class="btn">Request a Quote</a>
 </section>
 
-<section id="services" class="section">
-    <h2>Services</h2>
+<!-- ABOUT -->
+<section class="section">
+    <h2>The Smarter Way to Deliver Steel Projects</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+        Forge Line Steel Group eliminates the need for multiple contractors.
+        We provide drafting, fabrication, installation, and labour hire under one roof —
+        saving time, reducing cost, and ensuring accountability.
+    </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section dark">
+    <h2>Our Services</h2>
     <div class="grid">
-        <div class="card">Drafting</div>
+        <div class="card">Steel Drafting</div>
         <div class="card">Fabrication</div>
-        <div class="card">Installation</div>
-        <div class="card">Welding</div>
+        <div class="card">Installation & Rigging</div>
+        <div class="card">Certified Welding</div>
     </div>
 </section>
 
-<section id="labour" class="section dark">
-    <h2>Labour Hire</h2>
+<!-- LABOUR -->
+<section id="labour" class="section">
+    <h2>Labour Hire Solutions</h2>
     <div class="grid">
         <div class="card">Boilermakers</div>
         <div class="card">Welders</div>
@@ -111,12 +191,26 @@ footer {
     </div>
 </section>
 
-<section id="contact" class="section">
+<!-- PROJECTS -->
+<section id="projects" class="section dark">
+    <h2>Projects</h2>
+    <div class="grid gallery">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+        <img src="https://images.unsplash.com/photo-1581092335878-1b9d9e1b7c2e">
+        <img src="https://images.unsplash.com/photo-1597764690523-15bea4c581c9">
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact">
     <h2>Request a Quote</h2>
 
-    <a href="YOUR_FORM_LINK" target="_blank" class="btn">
-        Get a Quote
-    </a>
+    <div style="text-align:center;">
+        <a href="YOUR_FORM_LINK" target="_blank" class="btn">
+            Get a Quote →
+        </a>
+    </div>
 
 </section>
 
